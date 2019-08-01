@@ -216,8 +216,7 @@ $(function(){
         }
     }
 
-    $.get("levels/index.json").then(function(data) {
-        var level_index = JSON.parse(data);
+    $.get("levels/index.json").then(function(level_index) {
         levelNum = level_index.min_level;
         maxLevel = level_index.max_level;
         for (var level = level_index.min_level; level <= level_index.max_level; level++) {
