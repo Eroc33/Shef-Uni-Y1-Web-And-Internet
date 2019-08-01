@@ -1,0 +1,465 @@
+* {
+  /*Makes things a little easier to work with*/
+  box-sizing: border-box;
+  /*fixes an issue in chromium with columnized text (chromium bug?)*/
+  line-height: normal;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'OpenDyslexic', sans-serif;
+}
+
+article{
+  display: flex;
+  flex-direction: column;
+}
+/*figures*/
+figure.figure-small{
+  width:75%;
+}
+
+figure{
+  color: grey;
+  font-size: 0.75em;
+  margin: 1em;
+  /*prevent column breaking inside figure element, so that the caption stays with the image.
+    (This is where i begin to regret using css3 columns. Browsers really aren't at all standardised yet.
+    This *does* do what I wanted & expected though, so that's a plus.) */
+  -moz-break-inside: avoid;
+  -webkit-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+figure img{
+  width:100%;
+}
+
+figcaption{
+  padding: 3px;
+  text-align: center;
+}
+/*forms*/
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea{
+  /*horizontal resizing messes up the page sometimes, also forms are styled to be 100% of their container anyway*/
+  resize: vertical;
+  /*set a decent default height*/
+  height: 20em;
+}
+
+.control-group * {
+  display: block;
+  width: 100%;
+}
+
+.control-group label {
+  padding: 10px 0 5px 0;
+}
+
+fieldset{
+  /*slight indent to distinguish with whitespace*/
+  margin-left: 15px;
+}
+/*misc*/
+.script-only{
+  display: none;
+}
+
+#wrapper {
+  min-height: 100%;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-flow: column;
+}
+
+/*misc textual*/
+h1, h2, h2, h3, h4, h5, h6, p, address, fieldset, article, figure, blockquote {
+  margin-bottom: 1em;
+}
+
+body {
+  background-color: #c5c5c5;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.15em;
+}
+
+header h1 {
+  background-color: #a6e22e;
+  border-bottom: 3px solid #91cb1d;
+  margin-bottom: 0;
+  padding: 1.5%;
+}
+
+main {
+  padding: 8px;
+  flex:0 0 50%;
+}
+
+aside {
+  padding: 1.5%;
+  color: white;
+  background-color: grey;
+  flex: 0 0 50%;
+}
+
+footer {
+  height: 50px;
+  flex: 0 0 50px;
+  padding: 1em;
+  color: #858585;
+  background-color: #a5a5a5;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.columns {
+  display: flex;
+  flex-flow: column;
+  /*flex: 1 1 100%; is broken in ie for some reason, thankfully this seems to work everywhere:*/
+  flex:1 1 auto;
+}
+
+blockquote{
+  quotes: "\201C""\201D""\2018""\2019";
+  padding-left: 5px;
+  border-left: 5px solid lightgrey;
+}
+
+blockquote cite:before{
+  content: '\2014';
+}
+
+blockquote cite{
+  display: block;
+}
+
+blockquote:before{
+  content: open-quote;
+  font-size: 2em;
+  line-height: 0.5em;
+  vertical-align: -0.2em;
+  color: grey;
+}
+
+.note{
+  color: dimgrey;
+  font-size: 0.9em;
+}
+
+/*
+===================
+   MOBILE NAVBAR
+===================
+*/
+
+.toggle-button {
+  display: inline-block;
+  white-space: nowrap;
+  width: 100%;
+}
+
+nav a, .toggle-button label {
+  text-decoration: none;
+  color: white;
+  background-color: #7EAF1E;
+  border-bottom: 1px solid #91cb1d;
+  padding: 8px;
+  width: 100%;
+  display: inline-block;
+  -webkit-user-select: none;
+}
+
+.toggle-button .dropdown {
+  display: none;
+  background: #618518;
+}
+
+.dropdown{
+  display:flex;
+  flex-direction: column;
+}
+
+.dropdown .dropdown {
+  background: none;
+  flex-direction: column;
+}
+
+.toggle-button input[type=checkbox]:checked + label + .dropdown {
+  display: block;
+}
+
+.dropdown .toggle-button {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.dropdown a, .dropdown label {
+  display: block;
+  white-space: nowrap;
+  width: auto;
+  background: rgba(128, 128, 128, 0.05);
+}
+
+nav input[type=checkbox], .toggle-button input[type=checkbox] {
+  display: none;
+}
+
+/*mathjax math is too big for mobile screens by default*/
+.math{
+  font-size: 0.8em;
+}
+
+/*
+=====
+PRINT
+=====
+*/
+@media print, embossed{
+  /*no point printing the header really*/
+  header{
+    display: none;
+  }
+  /*everything else looks okay already as it follows the mobile look*/
+}
+
+/*
+======================
+ASSISTIVE TECHNOLOGIES
+======================
+*/
+@media speech, braille{
+  /*un-collapse menu for reader*/
+  nav.toggle-button .dropdown,nav .toggle-button .dropdown{
+    display: initial;
+  }
+  /*hide menu toggle buttons*/
+  nav input[type=checkbox],nav .toggle-button input[type=checkbox]{
+    display: block;
+  }
+  /*other things like colours *could* be removed, but there's no point really*/
+}
+
+/*
+====================
+TABLET/MEDIUM SCREEN
+====================
+*/
+
+@media screen and (min-width: 750px) {
+  #wrapper {
+    width: 80%;
+  }
+
+  header h1 {
+    font-size: 2em;
+    color: white;
+  }
+}
+
+/*
+====================
+DESKTOP/LARGE SCREEN
+====================
+*/
+
+@media screen and (min-width: 970px) {
+  .math{
+    font-size: initial;
+  }
+
+  article{
+    flex-direction: row;
+  }
+
+  article.with-image section{
+    flex: 0 0 60%;
+  }
+
+  article figure{
+    flex: 0 0 30%;
+  }
+
+  header {
+    flex: 0 0 122px;
+  }
+
+  .columns {
+    flex-flow: row;
+  }
+
+  #wrapper {
+    min-width: 780px;
+    max-width: 900px;
+  }
+
+  .column-text {
+    /*prefixes make me sad :(*/
+    -webkit-column-width: 15em;
+    -moz-column-width: 15em;
+    column-width: 15em;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+    text-align: justify;
+  }
+
+  .column-text figure{
+    /*Images in columnised text have issues in firefox, but floating them seems to fix it*/
+    float:left;
+  }
+
+  main {
+    margin: 3.125% 8%;
+    flex: 1 1 100%;
+  }
+
+  main.with-aside {
+    flex: 1 1 70%;
+    margin: 0 6.25%;
+  }
+
+  aside {
+    border-top: none;
+    flex: 1 1 30%;
+  }
+
+  /*
+  =====================================
+     RESET NAVBAR TO DESKTOP STYLING
+  =====================================
+  */
+  nav.mobile-toggle a {
+    border-bottom: 5px solid #91cb1d;
+    width: 13.8%;
+  }
+
+  nav.mobile-toggle > div.dropdown {
+    display: flex;
+    border: none;
+    position: relative;
+    width: 100%;
+    transform: none;
+  }
+
+  nav.mobile-toggle > div.dropdown:before {
+    display: none;
+  }
+
+  nav.mobile-toggle > label, nav.mobile-toggle > input[type=checkbox] {
+    display: none;
+  }
+
+  nav.mobile-toggle a {
+    display: inline-block;
+  }
+
+  nav.mobile-toggle a, .toggle-button {
+    flex: 1 1 100%;
+  }
+
+  .toggle-button label {
+    border-bottom: 5px solid #91cb1d;
+  }
+
+  .toggle-button .dropdown:before {
+    content: '';
+    display: block;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #a6e12f;
+    transform: translateY(-10px);
+    position: fixed;
+  }
+
+  .toggle-button .dropdown {
+    position: absolute;
+    transform: translateY(10px);
+    border: 5px solid #a6e12f;
+    /*prevents the dropdown being overlapped by other positioned elements (such as mathjax maths)*/
+    z-index: 99;
+  }
+
+  .dropdown a {
+    margin: 2px;
+    background: #a6e12f;
+  }
+
+  .dropdown .toggle-button input[type=checkbox]:checked {
+    padding-bottom: 5px;
+  }
+
+  .dropdown a:active {
+    margin-bottom: 7px;
+  }
+
+  nav.mobile-toggle .dropdown {
+    background: #7eb119;
+  }
+
+  .dropdown .toggle-button {
+    background: none;
+    margin: 2px;
+  }
+
+  /*box shadow on dropdown*/
+  .dropdown {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    flex-direction: row;
+  }
+
+  /*but not on top level accordion*/
+  nav.mobile-toggle > .dropdown {
+    box-shadow: none;
+  }
+
+  .dropdown .toggle-button .toggle-button-label {
+    background-color: #a6e12f;
+    cursor: pointer;
+  }
+
+  nav.mobile-toggle .dropdown .dropdown a {
+    width: auto;
+    display: block;
+  }
+
+  header {
+    background: #7eb119;
+  }
+
+  nav.mobile-toggle {
+    padding: 8px;
+  }
+
+  nav.mobile-toggle {
+    width: 100%;
+  }
+
+  nav a:active, .toggle-button input[type=checkbox]:checked + label.toggle-button-label {
+    border-bottom: 0;
+    padding-top: 8px;
+    transform: translateY(5px);
+  }
+
+  /*=====================================*/
+
+}
+

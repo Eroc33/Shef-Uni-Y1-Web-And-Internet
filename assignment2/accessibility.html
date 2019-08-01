@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Euan Rochester's Homepage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <h1>Euan Rochester</h1>
+        <nav class="toggle-button mobile-toggle">
+            <input type="checkbox" id="nav-toggle">
+            <label class="toggle-button-label" for="nav-toggle">Menu</label>
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+          <div class="toggle-button">
+            <input type="checkbox" id="about-toggle">
+            <label class="toggle-button-label" for="about-toggle">My Degree</label>
+            <div class="dropdown">
+                <a href="course/soft_eng.html">Software engineering</a>
+                <a href="course/foundations.html">Foundations of compsci</a>
+                <a href="course/java.html">Java programming</a>
+                <a href="course/machines.html">Machines and intelligence</a>
+                <a href="course/devices.html">Devices and networks</a>
+                <a href="course/web.html">Web and internet technology</a>
+            </div>
+          </div>
+                <a href="news.html">News</a>
+                <a href="the_diamond.html">The Diamond</a>
+                <a href="contact.html">Contact</a>
+                <a href="accessibility.html">Accessibility</a>
+            </div>
+        </nav>
+    </header>
+    <div class="columns">
+        <main class="column-text">
+            <h1>Accessibility</h1>
+            <p>
+                Much effort has been put into making this site as accessibly as possible.
+            </p>
+            <p>
+                The colour scheme has been chosen to provide contrast through saturation and
+                luminosity (rather than hue) which should prevent issues for colourblind people.
+                The 
+            </p>
+            <p>
+                Special consideration for screen readers has been taken in layout and display of the menu system (for
+                screen readers with the correct media query settings).
+            </p>
+            <p>
+                If you have javascript enabled then you can enable a dyslexia friendly font (<a href="http://opendyslexic.org/">Open Dyslexic</a>) here:
+            </p>
+                <fieldset>
+                    <label>Dyslexia mode:<input id="dyslexiaToggle" type="checkbox"></label>
+                </fieldset>
+            <p>
+                <span class="note">(Note: EU law requires me to inform you that checking this box will store some information locally
+                on your computer)</span>
+            </p>
+        </main>
+    </div>
+    <footer>© Euan Rochester 2015</footer>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

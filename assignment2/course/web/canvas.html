@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Euan Rochester's Homepage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <base href="../../">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <h1>Euan Rochester</h1>
+        <nav class="toggle-button mobile-toggle">
+            <input type="checkbox" id="nav-toggle">
+            <label class="toggle-button-label" for="nav-toggle">Menu</label>
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+          <div class="toggle-button">
+            <input type="checkbox" id="about-toggle">
+            <label class="toggle-button-label" for="about-toggle">My Degree</label>
+            <div class="dropdown">
+                <a href="course/soft_eng.html">Software engineering</a>
+                <a href="course/foundations.html">Foundations of compsci</a>
+                <a href="course/java.html">Java programming</a>
+                <a href="course/machines.html">Machines and intelligence</a>
+                <a href="course/devices.html">Devices and networks</a>
+                <a href="course/web.html">Web and internet technology</a>
+            </div>
+          </div>
+                <a href="news.html">News</a>
+                <a href="the_diamond.html">The Diamond</a>
+                <a href="contact.html">Contact</a>
+                <a href="accessibility.html">Accessibility</a>
+            </div>
+        </nav>
+    </header>
+    <div class="columns">
+        <main>
+            <h1>Web and internet technology: Canvas</h1>
+            <p>
+            One of the technologies which we have been learning about in "Web and internet technology" is html canvas,
+            which allows arbitrary drawing on a surface using javascript, below is an example game of "sokoban" which
+            I have created using html5 canvas.
+            </p>
+            <p>
+            To play move with the arrow keys, get all boxes on to storage areas to go to the next level, use r to reset.
+            </p>
+            <canvas id="sokoban"></canvas>
+        </main>
+    </div>
+    <footer>© Euan Rochester 2015</footer>
+</div>
+<script src="js/main.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script defer src="js/sokoban.js"></script>
+</body>
+</html>

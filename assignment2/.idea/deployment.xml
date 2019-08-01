@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="DevBox (project level)" showEqualInSync="true">
+    <serverData>
+      <paths name="DevBox">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="DevBox (project level)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/srv/http/current_project" local="$PROJECT_DIR$" web="/current_project" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

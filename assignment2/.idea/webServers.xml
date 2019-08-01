@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6b5daf4a-ae60-4b65-8939-15fa24252407" name="DevBox (project level)" url="http://143.167.243.99">
+        <fileTransfer host="143.167.243.99" port="39999" privateKey="D:\msys2\home\euan\.ssh\id_rsa" accessType="SFTP" passphrase="dff8dfe1dfc5dfc3dfc9dfc4dfc2dfc4df98df9e" username="euan" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

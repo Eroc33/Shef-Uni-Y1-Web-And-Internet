@@ -1,0 +1,22 @@
+Design changes:
+    - Merged about page into index as there wasn't enough content to fill both.
+    - Made aside darker to give more contrast to main content.
+
+Game design:
+    - Clone of the classic game sokoban
+    - Uses keyboard input
+    - Draws shapes and images to canvas
+    - Loads level index (what levels are available) and levels by ajax
+
+Form security:
+    - No spam protection
+    - email still in plaintext
+    - No xxs vulnerability as javascript is not loaded by email clients
+    - Limited csrf possibility: Formmail.pl checks referer
+
+Fallback:
+    - Progressive enhancement
+    - NoScript and .script-only class where progressive enhancement not applicable
+
+Debugging:
+    - Chrome dev tools
