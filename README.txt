@@ -9,3 +9,5 @@ Assignment 1 was to create a set of mockups, and talk about accesibility conside
 Assignment 2 was to implement the website designed in assignment 1.
 
 Assignment 2 also asked us to develop something in javascript which used 2d canvas. For this I implemented a sokoban clone, partly as I already had the level data from a different assignment. Note that sokoban will not be playable on newer browsers if accessed using the file:// url scheme as some browsers interpret a page with file:// url acessing a resource with a file:// url as a violation of CORS.
+
+A hosted version of Assignment 2 can be accessed at https://eroc33.github.io/Shef-Uni-Y1-Web-And-Internet/assignment2/index.html
